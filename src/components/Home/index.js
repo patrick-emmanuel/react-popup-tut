@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './styles.css';
 
 const Home = () => (
-    <div>
-        <Link to="/contact">Contact</Link>        
+    <div className="wrapper">
+        <Link className="contact" to="/contact">Contact me!</Link>
     </div>
 )
 
