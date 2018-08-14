@@ -4,20 +4,32 @@ body {
   font-family: sans-serif;
 }
 
-.form-wrapper{
+.form-wrapper {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  width: 70%;
 }
+
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 input, textarea {
-  width: 100%;
   padding: 15px 20px;
   font-size: 18px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+}
+
+button {
+  background: green;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 1px solid #afafaf;
+  margin: 10px 20px;
 }

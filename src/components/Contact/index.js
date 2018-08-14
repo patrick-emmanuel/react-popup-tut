@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Popup from '../Popup';
 import handIcon from './ok-hand.png';
+import closeIcon from './Close.svg';
 import './styles.css';
 
 class ContactForm extends Component {
@@ -10,19 +11,23 @@ class ContactForm extends Component {
         email: '',
         message: '',
         showPopup: false,
-        submitted: false
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         let change = {}
         change[e.target.name] = e.target.value
         this.setState(change)
     }
 
-    handleSubmit(e) {
+    togglePopup = () => {
+        this.setState({ showPopup: !this.state.showPopup });
+        this.props.history.push({ pathname: '/' });
+    };
+
+    handleSubmit = (e) => {
         e.preventDefault()
         this.setState({
-            submitted: true
+            showPopup: true
         })
     }
 
@@ -35,7 +40,7 @@ class ContactForm extends Component {
                         placeholder="Your name"
                         name="name"
                         value={this.state.name}
-                        handleChange={this.handleChange}
+                        onChange={this.handleChange}
                         required />
 
                     <input
@@ -43,26 +48,26 @@ class ContactForm extends Component {
                         placeholder="Your email"
                         name="email"
                         value={this.state.email}
-                        handleChange={this.handleChange}
+                        onChange={this.handleChange}
                         required />
 
                     <textarea
                         cols="4"
                         rows="5"
                         type="text"
+                        name="message"
                         placeholder="Your message"
                         message="message"
                         value={this.state.message}
-                        handleChange={this.handleChange}
+                        onChange={this.handleChange}
                         required />
-                    <button type="submit">Submit</button>
+                    <button className="submit-button" type="submit">Submit</button>
                     <Popup showPopup={this.state.showPopup}>
                         <div className="confirm">
-                            <div className="close-icon">
-                                <div className="inner-content">
-                                    <img src={handIcon} alt="OK" />
-                                    <p> Done</p>
-                                </div>
+                            <img src={closeIcon} alt="close" className="close-icon" onClick={this.togglePopup} />
+                            <div className="inner-content">
+                                <img src={handIcon} alt="OK" />
+                                <p> Done</p>
                             </div>
                         </div>
                     </Popup>

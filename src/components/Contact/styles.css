@@ -1,9 +1,14 @@
 .confirm{
-
+    display: flex;
+    flex-direction: column;
 }
 .close-icon{
-
+    align-self: flex-end;
 }
 .inner-content{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 40px;
 }
