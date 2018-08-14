@@ -17,7 +17,7 @@ class Popup extends React.Component {
   closePopup() {
     this.timeout = setTimeout(() => {
       this.setState({ isTimeout: true });
-      this.props.history.push({ pathname: '/' });
+      this.props.history.push({ pathname: '/success' });
     }, 2000);
   }
   componentWillUnmount() {
