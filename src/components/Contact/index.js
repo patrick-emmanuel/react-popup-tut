@@ -62,16 +62,16 @@ class ContactForm extends Component {
                         onChange={this.handleChange}
                         required />
                     <button className="submit-button" type="submit">Submit</button>
-                    <Popup showPopup={this.state.showPopup}>
-                        <div className="confirm">
-                            <img src={closeIcon} alt="close" className="close-icon" onClick={this.togglePopup} />
-                            <div className="inner-content">
-                                <img src={handIcon} alt="OK" />
-                                <p> Done</p>
-                            </div>
-                        </div>
-                    </Popup>
                 </form>
+                <Popup showPopup={this.state.showPopup}>
+                    <div className="confirm">
+                        <img src={closeIcon} alt="close" className="close-icon" onClick={this.togglePopup} />
+                        <div className="inner-content">
+                            <img src={handIcon} alt="OK" />
+                            <p> Order gotten</p>
+                        </div>
+                    </div>
+                </Popup>
             </div>
         );
     }

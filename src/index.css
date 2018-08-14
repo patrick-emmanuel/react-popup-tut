@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: chocolate;
+  background: radial-gradient(ellipse at center, #a90329 0%,#a5041f 28%,#6d0019 100%);
 }
 
 .form-wrapper {
