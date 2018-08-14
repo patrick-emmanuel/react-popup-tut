@@ -1,0 +1,21 @@
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(23, 14, 49, 0.4);
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    -webkit-box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
