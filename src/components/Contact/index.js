@@ -3,13 +3,14 @@ import Popup from '../Popup';
 import handIcon from './ok-hand.png';
 import closeIcon from './Close.svg';
 import './styles.css';
-
-class ContactForm extends Component {
+import spinner from './spinner.gif';
+class Contact extends Component {
 
     state = {
         name: '',
         email: '',
         message: '',
+        loading: false,
         showPopup: false,
     }
 
@@ -26,9 +27,17 @@ class ContactForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.setState({
-            showPopup: true
-        })
+        this.setState({ loading: true })
+        this.timeout = setTimeout(() => {
+            this.setState({
+                showPopup: true,
+                loading: false
+            })
+        }, 2000)
+    }
+
+    componentWillMount() {
+        clearTimeout(this.timeout);
     }
 
     render() {
@@ -61,14 +70,18 @@ class ContactForm extends Component {
                         value={this.state.message}
                         onChange={this.handleChange}
                         required />
-                    <button className="submit-button" type="submit">Submit</button>
+                    <button className="submit-button" type="submit">
+                        { this.state.loading ?
+                            <img src={spinner} alt="loading" height="25" width="25"/>
+                            : null }
+                        Submit</button>
                 </form>
                 <Popup showPopup={this.state.showPopup}>
                     <div className="confirm">
                         <img src={closeIcon} alt="close" className="close-icon" onClick={this.togglePopup} />
                         <div className="inner-content">
                             <img src={handIcon} alt="OK" />
-                            <p> Order gotten</p>
+                            <p>Order received.</p>
                         </div>
                     </div>
                 </Popup>
@@ -77,4 +90,4 @@ class ContactForm extends Component {
     }
 }
 
-export default ContactForm;
+export default Contact;

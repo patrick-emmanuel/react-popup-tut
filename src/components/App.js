@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import Contact from './Contact';
 import Success from './Success';
 import Home from './Home';
-import './App.css';
 
 class App extends Component {
   render() {

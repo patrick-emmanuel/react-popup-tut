@@ -12,8 +12,6 @@
 }
 
 .content{
-    -webkit-box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
     box-shadow: -1px 10px 55px -4px rgba(0, 0, 0, 0.75);
     background-color: #fff;
     border-radius: 5px;

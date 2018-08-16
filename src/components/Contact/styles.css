@@ -12,3 +12,8 @@
     flex-direction: column;
     padding: 30px 60px;
 }
+
+.submit-button{
+    display: flex;
+    justify-content: space-around;
+}
