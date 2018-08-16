@@ -72,9 +72,9 @@ class Contact extends Component {
                         required />
                     <button className="submit-button" type="submit">
                         { this.state.loading ?
-                            <img src={spinner} alt="loading" height="25" width="25"/>
-                            : null }
-                        Submit</button>
+                            (<span>loading...</span>)
+                            : Submit }
+                        </button>
                 </form>
                 <Popup showPopup={this.state.showPopup}>
                     <div className="confirm">
