@@ -3,7 +3,6 @@ import Popup from '../Popup';
 import handIcon from './ok-hand.png';
 import closeIcon from './Close.svg';
 import './styles.css';
-import spinner from './spinner.gif';
 class Contact extends Component {
 
     state = {
@@ -71,9 +70,7 @@ class Contact extends Component {
                         onChange={this.handleChange}
                         required />
                     <button className="submit-button" type="submit">
-                        { this.state.loading ?
-                            (<span>loading...</span>)
-                            : Submit }
+                        { this.state.loading ? 'loading...' : 'Submit' }
                         </button>
                 </form>
                 <Popup showPopup={this.state.showPopup}>
