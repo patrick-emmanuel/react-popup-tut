@@ -12,3 +12,9 @@
     flex-direction: column;
     padding: 30px 60px;
 }
+.form-wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
